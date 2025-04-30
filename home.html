@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATB - Advance Technology & Business</title>
+  <meta name="description" content="Advance Technology and Business - Innovative IT Solutions, Consulting, and Industrial Services.">
+  <meta name="keywords" content="ATB, IT Consulting, Oman, Cybersecurity, Technology Solutions">
+  <meta name="author" content="Advance Technology and Business">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --primary: #0a2240;
+      --secondary: #001a33;
+      --accent: #00a0e1;
+      --light: #f5f8fa;
+      --dark: #1a1a1a;
+      --gray: #6c757d;
+      --light-blue: #e6f2ff;
+    }
+
+    [data-bs-theme="dark"] {
+      --primary: #0a2240;
+      --secondary: #001a33;
+      --accent: #00a0e1;
+      --light: #121212;
+      --dark: #f8f9fa;
+      --gray: #adb5bd;
+      --light-blue: #1a2a3a;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark);
+      overflow-x: hidden;
+      line-height: 1.6;
+      background-color: var(--light);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.loaded {
+      opacity: 1;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      background-color: var(--light) !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 8px 0;
+      transition: all 0.3s;
+    }
+
+    .navbar.scrolled {
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .navbar-brand span {
+      color: var(--accent);
+    }
+
+    .nav-link {
+      color: var(--dark) !important;
+      font-weight: 500;
+      margin: 0 10px;
+      transition: color 0.3s;
+      position: relative;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--accent) !important;
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      width: 60%;
+      height: 2px;
+      background-color: var(--accent);
+      bottom: -2px;
+      left: 20%;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background-color: var(--light);
+      padding-top: 70px;
+    }
+
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 34, 64, 0.7);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-content p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Section Styling */
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 3px;
+      background-color: var(--accent);
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .section-title p {
+      color: var(--gray);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Service Cards */
+    .service-card {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+      height: 100%;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-icon {
+      width: 70px;
+      height: 70px;
+      background: var(--light-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .service-icon i {
+      font-size: 30px;
+      color: var(--accent);
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+
+    .service-card p {
+      color: var(--gray);
+      margin-bottom: 0;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .btn-primary:hover {
+      background-color: #0088c6;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 160, 225, 0.3);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary);
+      color: white;
+      padding: 20px 0;
+    }
+
+    /* Partner Section */
+    .tech-background-section {
+      position: relative;
+      overflow: hidden;
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .tech-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0.15;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%2300a0e1"><circle cx="25" cy="25" r="2"/><circle cx="75" cy="25" r="2"/><circle cx="50" cy="50" r="2"/><circle cx="25" cy="75" r="2"/><circle cx="75" cy="75" r="2"/></svg>') center/cover no-repeat, linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    }
+
+    /* Partners Album Section */
+    .partner-card {
+      background-color: var(--light);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s;
+      height: 100%;
+    }
+
+    .partner-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .partner-logo-container {
+      padding: 30px;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 200px;
+    }
+
+    .partner-logo {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .partner-body {
+      padding: 20px;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .partner-title {
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .partner-description {
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 576px) {
+      .partner-logo-container {
+        height: 150px;
+        padding: 20px;
+      }
+    }
+
+    /* Contact Section */
+    .info-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--light-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      color: var(--accent);
+    }
+
+    .contact-form {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .form-control {
+      border: 1px solid #e0e0e0;
+      padding: 12px;
+      border-radius: 4px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .form-control:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 0.2rem rgba(0, 160, 225, 0.25);
+    }
+
+    .form-label {
+      font-weight: 500;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    /* Chatbot Styles */
+    .chat-widget {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .chat-button {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .chat-button:hover {
+      transform: scale(1.1);
+    }
+
+    .chat-button i {
+      font-size: 18px;
+    }
+
+    .chat-container {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 300px;
+      height: 400px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .chat-header {
+      background: var(--primary);
+      color: white;
+      padding: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chat-header h3 {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .close-chat {
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    .chat-messages {
+      flex-grow: 1;
+      padding: 12px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .message {
+      max-width: 85%;
+      padding: 8px 12px;
+      border-radius: 12px;
+      margin-bottom: 4px;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .welcome-message {
+      background: var(--primary);
+      color: white;
+      padding: 12px;
+      text-align: center;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .chat-input {
+      padding: 12px;
+      border-top: 1px solid #eee;
+      display: flex;
+      gap: 8px;
+    }
+
+    .chat-input input {
+      flex-grow: 1;
+      padding: 8px 12px;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      outline: none;
+      font-size: 0.9rem;
+    }
+
+    .chat-input button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      font-size: 0.9rem;
+    }
+
+    .chat-input button:hover {
+      background: #0088c6;
+    }
+
+    .typing-indicator {
+      display: none;
+      align-self: flex-start;
+      background: var(--light-blue);
+      padding: 10px 15px;
+      border-radius: 15px;
+      margin-bottom: 5px;
+    }
+
+    .typing-indicator span {
+      height: 8px;
+      width: 8px;
+      background: var(--primary);
+      display: inline-block;
+      border-radius: 50%;
+      margin-right: 3px;
+      animation: typing 1s infinite;
+    }
+
+    .typing-indicator span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .typing-indicator span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes typing {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    /* Custom Cursor */
+    .cursor {
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform 0.2s ease;
+    }
+
+    .cursor-dot {
+      width: 4px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform 0.1s ease;
+    }
+
+    .cursor.hover {
+      transform: scale(1.5);
+      background: rgba(0, 160, 225, 0.1);
+      border-color: var(--accent);
+    }
+
+    .cursor-dot.hover {
+      transform: scale(0.5);
+      opacity: 0.5;
+    }
+
+    /* Animated Logo Styles */
+    .animated-logo {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      width: 200px;
+      height: 60px;
+    }
+
+    .logo-circle {
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--accent);
+      border-radius: 50%;
+      position: relative;
+      animation: rotate 3s linear infinite;
+    }
+
+    .logo-circle::before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      right: -3px;
+      bottom: -3px;
+      border: 3px solid transparent;
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: spin 1.5s linear infinite;
+    }
+
+    .logo-text {
+      margin-left: 15px;
+      font-size: 24px;
+      font-weight: 700;
+      position: relative;
+    }
+
+    .logo-text span {
+      position: relative;
+      display: inline-block;
+      animation: colorChange 3s infinite;
+    }
+
+    .logo-text .letter-a {
+      animation-delay: 0s;
+    }
+
+    .logo-text .letter-t {
+      animation-delay: 1s;
+    }
+
+    .logo-text .letter-b {
+      animation-delay: 2s;
+    }
+
+    @keyframes colorChange {
+      0%, 100% {
+        color: white;
+      }
+      33% {
+        color: #00a0e1; /* light blue */
+      }
+      66% {
+        color: #0a2240; /* dark blue */
+      }
+    }
+
+    .logo-text span::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: currentColor;
+      transform: scaleX(0);
+      transform-origin: right;
+      animation: underline 2s ease-in-out infinite;
+    }
+
+    .logo-particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: particle 2s ease-in-out infinite;
+    }
+
+    .particle:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+    .particle:nth-child(2) { top: 60%; left: 20%; animation-delay: 0.3s; }
+    .particle:nth-child(3) { top: 30%; left: 80%; animation-delay: 0.6s; }
+    .particle:nth-child(4) { top: 70%; left: 70%; animation-delay: 0.9s; }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes underline {
+      0% { transform: scaleX(0); transform-origin: right; }
+      50% { transform: scaleX(1); transform-origin: right; }
+      51% { transform: scaleX(1); transform-origin: left; }
+      100% { transform: scaleX(0); transform-origin: left; }
+    }
+
+    @keyframes particle {
+      0% { transform: translate(0, 0); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translate(20px, -20px); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-dot"></div>
+
+  <!-- Navbar Start -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand" href="#home">
+        <div class="animated-logo">
+          <div class="logo-circle"></div>
+          <div class="logo-text">
+            <span class="letter-a">A</span>
+            <span class="letter-t">T</span>
+            <span class="letter-b">B</span>
+          </div>
+          <div class="logo-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+          </div>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#partners">Partners</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center ms-3">
+          <button class="theme-toggle btn btn-link" id="themeToggle">
+            <i class="fas fa-moon"></i>
+          </button>
+          <div class="dropdown">
+            <button class="language-toggle btn btn-link" type="button" id="languageDropdown" data-bs-toggle="dropdown">
+              <i class="fas fa-globe"></i>
+            </button>
+            <ul class="dropdown-menu language-dropdown">
+              <li><a class="dropdown-item" href="#">English</a></li>
+              <li><a class="dropdown-item" href="#">العربية</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar End -->
+
+  <!-- Hero Section -->
+  <header id="home" class="hero-section">
+    <video autoplay muted loop playsinline class="hero-video" id="heroVideo">
+      <source src="hero-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="overlay"></div>
+    <div class="hero-content text-center">
+      <h1 class="display-4 fw-bold">Advance Technology & Business</h1>
+      <p class="lead">Empowering Innovation in IT, Consulting, and Industrial Services</p>
+      <a href="#contact" class="btn btn-primary mt-3">Get in Touch</a>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="section container py-5">
+    <div class="section-title">
+      <h2>About ATB</h2>
+      <p>We specialize in IT solutions for both public and private sectors, consulting and business development, and industrial services such as heavy machinery maintenance and providing spare parts and tools. Our commitment is to deliver innovative and reliable services to our clients across various industries.</p>
+    </div>
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="ABT Team" class="img-fluid">
+      </div>
+      <div class="col-lg-6">
+        <h3 class="mb-4">Driving Digital Transformation</h3>
+        <p class="mb-4">Advance Technology and Business (ATB) is a leading provider of IT solutions, cybersecurity services, and business development consulting. With years of experience across multiple industries, we help clients leverage technology to achieve their strategic objectives.</p>
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="d-flex">
+              <div class="me-3 text-primary">
+                <i class="fas fa-check-circle fa-2x"></i>
+              </div>
+              <div>
+                <h5>Expert Team</h5>
+                <p class="mb-0">Certified professionals with deep industry knowledge</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="d-flex">
+              <div class="me-3 text-primary">
+                <i class="fas fa-lightbulb fa-2x"></i>
+              </div>
+              <div>
+                <h5>Innovative Solutions</h5>
+                <p class="mb-0">Customized approaches for your unique challenges</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="d-flex">
+              <div class="me-3 text-primary">
+                <i class="fas fa-handshake fa-2x"></i>
+              </div>
+              <div>
+                <h5>Partnership Focus</h5>
+                <p class="mb-0">Long-term relationships built on trust</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="d-flex">
+              <div class="me-3 text-primary">
+                <i class="fas fa-chart-line fa-2x"></i>
+              </div>
+              <div>
+                <h5>Proven Results</h5>
+                <p class="mb-0">Measurable impact on our clients' success</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="section container py-5 bg-light">
+    <div class="section-title">
+      <h2>Our Services</h2>
+      <p>Comprehensive solutions designed to meet your technology and business needs.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-server"></i>
+          </div>
+          <h3>IT Solutions</h3>
+          <p>End-to-end IT services for government and private enterprises including infrastructure, software, and cybersecurity.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Consulting & Business Development</h3>
+          <p>Expert guidance to help you grow your business and streamline operations for better efficiency and profitability.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Industrial Services</h3>
+          <p>Maintenance of heavy machines and equipment, and supplying tools and spare parts with precision and reliability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners Section -->
+  <section class="section tech-background-section" id="partners">
+    <div class="tech-background"></div>
+    <div class="container section-content">
+      <div class="section-title">
+        <h2 style="color: white;">Our Partners</h2>
+        <p style="color: rgba(255,255,255,0.8)">We collaborate with industry leaders to deliver exceptional solutions to our clients.</p>
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <!-- TrustNoted -->
+        <div class="col">
+          <div class="partner-card">
+            <div class="partner-logo-container">
+              <img src="../ATB website/img/TrustnotedLOGO.jpeg" alt="TrustNoted" class="partner-logo">
+            </div>
+            <div class="partner-body">
+              <h5 class="partner-title">TrustNoted</h5>
+              <p class="partner-description">TrustNoteD is a Switzerland-based global solutions provider specializing in digital innovations for Central Bank Digital Currency (CBDC), tokenization, and Distributed Ledger Technology (DLT)-based identity solutions. They offers services, including consulting, implementation, and operation, tailored for governments, financial institutions, and organizations</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Orell Fussli -->
+        <div class="col">
+          <div class="partner-card">
+            <div class="partner-logo-container">
+              <img src="../ATB website/img/OrellFussliLOGO.jpeg" alt="Orell Fussli" class="partner-logo">
+            </div>
+            <div class="partner-body">
+              <h5 class="partner-title">Orell Fussli</h5>
+              <p class="partner-description">Orell Füssli specializes in high-security printing and is a leading provider of secure banknotes and identification documents for central banks and issuing authorities worldwide. Their expertise includes designing and producing passports, visas, ID cards, and driving licenses, incorporating advanced security features.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navayo -->
+        <div class="col">
+          <div class="partner-card">
+            <div class="partner-logo-container">
+              <img src="../ATB website/img/NavayoLOGO.png" alt="Navayo" class="partner-logo">
+            </div>
+            <div class="partner-body">
+              <h5 class="partner-title">Navayo</h5>
+              <p class="partner-description">Navayo Group is a cutting-edge IT research and development company specializing in hardware-based encryption solutions for secure communications. They offers a comprehensive ecosystem of security and privacy products designed for governmental and military clients across four continents</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fraunhofer Institute -->
+        <div class="col">
+          <div class="partner-card">
+            <div class="partner-logo-container">
+              <img src="../ATB website/img/fraunhoferLOGO.jpeg" alt="Fraunhofer Institute" class="partner-logo">
+            </div>
+            <div class="partner-body">
+              <h5 class="partner-title">Fraunhofer Institute</h5>
+              <p class="partner-description">The Fraunhofer-Gesellschaft, headquartered in Germany, is one of the world's leading organizations for applied research. Established in 1949, it focuses on conducting cutting-edge research and transferring results to industry to strengthen Germany's industrial base and benefit society as a whole.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ChebCheb Group -->
+        <div class="col">
+          <div class="partner-card">
+            <div class="partner-logo-container">
+              <img src="../ATB website/img/ChebchebLOGO.png" alt="ChebCheb Group" class="partner-logo">
+            </div>
+            <div class="partner-body">
+              <h5 class="partner-title">ChebCheb Group</h5>
+              <p class="partner-description">CHEBCHEB Group GmbH is an Austrian-based company specializing in the design, production, and distribution of specialized vehicles and comprehensive project management services. With a strong presence in both Europe and North Africa, the company bridges Austrian engineering excellence with deep regional expertise.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- MDS16 -->
+        <div class="col">
+          <div class="partner-card">
+            <div class="partner-logo-container">
+              <img src="../ATB website/img/MDS16LOGO.png" alt="MDS16" class="partner-logo">
+            </div>
+            <div class="partner-body">
+              <h5 class="partner-title">MDS16</h5>
+              <p class="partner-description">MDS 16 is a Turkish defense and aerospace company headquartered in Istanbul, specializing in advanced military systems, space technologies, and cybersecurity solutions. The company offers integrated, technology-driven services tailored to the needs of land, naval, air, and space defense operations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>Get in touch to discuss how we can help your business succeed.</p>
+      </div>
+      <div class="row">
+        <div class="col-lg-5 mb-5 mb-lg-0">
+          <h3 class="mb-4">Let's Talk About Your Project</h3>
+          <p class="mb-5">Whether you have questions about our services or want to discuss a potential project, our team is ready to help. Reach out to us using the contact form or through one of the methods below.</p>
+
+          <div class="d-flex mb-4">
+            <div class="info-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>
+              <h5>Location</h5>
+              <p class="mb-0">P.O.BOX ; 1522 - Postal Code :112 South Al Hail / Muscat, Oman</p>
+            </div>
+          </div>
+
+          <div class="d-flex mb-4">
+            <div class="info-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <h5>Email</h5>
+              <p class="mb-0">office@atboman.com</p>
+            </div>
+          </div>
+
+          <div class="d-flex mb-4">
+            <div class="info-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div>
+              <h5>Phone</h5>
+              <p class="mb-0">+968 9224 9897</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="contact-form">
+            <form id="contactForm" onsubmit="return handleSubmit(event)">
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" required>
+                </div>
+              </div>
+              <div class="mb-4">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" class="form-control" id="subject" required>
+              </div>
+              <div class="mb-4">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chatbot Widget -->
+  <div class="chat-widget">
+    <button class="chat-button" onclick="toggleChat()">
+      <i class="fas fa-comments"></i>
+    </button>
+    <div class="chat-container" id="chatContainer">
+      <div class="chat-header">
+        <h3>ATB Assistant</h3>
+        <button class="close-chat" onclick="toggleChat()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="welcome-message">
+        Welcome to ATB! 👋 I'm here to help you learn more about our services, partnerships, and how we can assist your business. How can I help you today?
+      </div>
+      <div class="chat-messages" id="chatMessages">
+      </div>
+      <div class="typing-indicator" id="typingIndicator">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center text-white py-4 bg-primary">
+    <p class="mb-0">&copy; 2025 ATB - Advance Technology and Business. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="app.js"></script>
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('mainNavbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = themeToggle.querySelector('i');
+    
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.documentElement.setAttribute('data-bs-theme', 'dark');
+      themeIcon.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    themeToggle.addEventListener('click', function() {
+      const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+      if (currentTheme === 'dark') {
+        document.documentElement.setAttribute('data-bs-theme', 'light');
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.setAttribute('data-bs-theme', 'dark');
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+
+    // Active link highlighting
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= (sectionTop - sectionHeight / 3)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').substring(1) === current) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Contact Form Handling
+    function handleSubmit(event) {
+      event.preventDefault();
+      
+      // Get form values
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+
+      // Create email body
+      const emailBody = `
+Name: ${name}
+Email: ${email}
+Subject: ${subject}
+
+Message:
+${message}
+      `;
+
+      // Create mailto link
+      const mailtoLink = `mailto:office@atboman.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+
+      // Open default email client
+      window.location.href = mailtoLink;
+
+      // Clear form
+      document.getElementById('contactForm').reset();
+
+      // Show success message
+      alert('Thank you for your message. Your default email client will open with the message details.');
+
+      return false;
+    }
+
+    // Chatbot functionality
+    const chatContainer = document.getElementById('chatContainer');
+    const chatMessages = document.getElementById('chatMessages');
+    const userInput = document.getElementById('userInput');
+    const typingIndicator = document.getElementById('typingIndicator');
+
+    function toggleChat() {
+      chatContainer.style.display = chatContainer.style.display === 'flex' ? 'none' : 'flex';
+      if (chatContainer.style.display === 'flex') {
+        userInput.focus();
+      }
+    }
+
+    function handleKeyPress(event) {
+      if (event.key === 'Enter') {
+        sendMessage();
+      }
+    }
+
+    function sendMessage() {
+      const message = userInput.value.trim();
+      if (message === '') return;
+
+      // Hide welcome message if it's the first message
+      const welcomeMessage = document.querySelector('.welcome-message');
+      if (welcomeMessage) {
+        welcomeMessage.style.display = 'none';
+      }
+
+      // Add user message
+      addMessage(message, 'user');
+      userInput.value = '';
+
+      // Show typing indicator
+      typingIndicator.style.display = 'block';
+
+      // Simulate bot response after a delay
+      setTimeout(() => {
+        typingIndicator.style.display = 'none';
+        const botResponse = getBotResponse(message);
+        addMessage(botResponse, 'bot');
+      }, 1000);
+    }
+
+    function addMessage(message, sender) {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `message ${sender}-message`;
+      messageDiv.textContent = message;
+      chatMessages.appendChild(messageDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function getBotResponse(message) {
+      // Convert message to lowercase for easier matching
+      const lowerMessage = message.toLowerCase();
+
+      // Define responses based on keywords
+      if (lowerMessage.includes('hello') || lowerMessage.includes('hi')) {
+        return "Hello! How can I assist you today?";
+      }
+      else if (lowerMessage.includes('service') || lowerMessage.includes('services')) {
+        return "ATB offers IT solutions, consulting & business development, and industrial services. Would you like to know more about any specific service?";
+      }
+      else if (lowerMessage.includes('contact') || lowerMessage.includes('email') || lowerMessage.includes('phone')) {
+        return "You can reach us at:\nEmail: office@atboman.com\nPhone: +968 9224 9897\nLocation: P.O.BOX 1522 - Postal Code: 112 South Al Hail / Muscat, Oman";
+      }
+      else if (lowerMessage.includes('partner') || lowerMessage.includes('partners')) {
+        return "We collaborate with industry leaders like TrustNoted, Orell Fussli, Navayo, and others. Would you like to know more about our partnerships?";
+      }
+      else if (lowerMessage.includes('thank')) {
+        return "You're welcome! Is there anything else I can help you with?";
+      }
+      else if (lowerMessage.includes('bye') || lowerMessage.includes('goodbye')) {
+        return "Thank you for chatting with us. Have a great day!";
+      }
+      else {
+        return "I'm here to help! You can ask me about our services, contact information, or partnerships. What would you like to know?";
+      }
+    }
+
+    // Control hero video speed
+    document.addEventListener('DOMContentLoaded', function() {
+      const heroVideo = document.getElementById('heroVideo');
+      if (heroVideo) {
+        heroVideo.playbackRate = 0.5; // Set playback speed to half (0.5x)
+      }
+    });
+
+    // Custom Cursor Animation
+    const cursor = document.querySelector('.cursor');
+    const cursorDot = document.querySelector('.cursor-dot');
+
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX - 10 + 'px';
+      cursor.style.top = e.clientY - 10 + 'px';
+      
+      cursorDot.style.left = e.clientX - 2 + 'px';
+      cursorDot.style.top = e.clientY - 2 + 'px';
+    });
+
+    // Add hover effect for interactive elements
+    const interactiveElements = document.querySelectorAll('a, button, input, textarea, .service-card, .partner-card');
+    
+    interactiveElements.forEach(element => {
+      element.addEventListener('mouseenter', () => {
+        cursor.classList.add('hover');
+        cursorDot.classList.add('hover');
+      });
+      
+      element.addEventListener('mouseleave', () => {
+        cursor.classList.remove('hover');
+        cursorDot.classList.remove('hover');
+      });
+    });
+
+    // Hide cursor when leaving window
+    document.addEventListener('mouseleave', () => {
+      cursor.style.display = 'none';
+      cursorDot.style.display = 'none';
+    });
+
+    document.addEventListener('mouseenter', () => {
+      cursor.style.display = 'block';
+      cursorDot.style.display = 'block';
+    });
+  </script>
+
+</body>
+
+</html>

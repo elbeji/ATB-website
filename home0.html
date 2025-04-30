@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advance Technology and Business - Innovative IT Solutions, Consulting, and Industrial Services.">
+<meta name="keywords" content="ATB, IT Consulting, Oman, Cybersecurity, Technology Solutions">
+<meta name="author" content="Advance Technology and Business">
+
+    <title>ATB - Advance Technology & Business</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="preload" as="video" href="Background.mp4" type="video/mp4">
+
+    <style>
+         :root {
+            --primary: #0a2240;
+            /* Augentic primary blue */
+            --secondary: #001a33;
+            /* Darker blue */
+            --accent: #00a0e1;
+            /* Augentic accent blue */
+            --light: #f5f8fa;
+            /* Light background */
+            --dark: #1a1a1a;
+            /* Dark text */
+            --gray: #6c757d;
+            --light-blue: #e6f2ff;
+            /* Augentic light blue */
+        }
+        
+        [data-bs-theme="dark"] {
+            --primary: #0a2240;
+            --secondary: #001a33;
+            --accent: #00a0e1;
+            --light: #121212;
+            --dark: #f8f9fa;
+            --gray: #adb5bd;
+            --light-blue: #1a2a3a;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+            background-color: var(--light);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        /* Navbar - Augentic style */
+        
+        .navbar {
+            background-color: var(--light) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 8px 0;
+            /* Reduced height */
+            transition: all 0.3s;
+        }
+        
+        .navbar.scrolled {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand {
+            font-size: 24px;
+            /* Slightly smaller */
+            font-weight: 700;
+            color: var(--primary) !important;
+        }
+        
+        .navbar-brand span {
+            color: var(--accent);
+        }
+        
+        .nav-link {
+            color: var(--dark) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--accent) !important;
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 2px;
+            background-color: var(--accent);
+            bottom: -2px;
+            left: 20%;
+        }
+        /* Theme and Language Toggle */
+        
+        .theme-toggle,
+        .language-toggle {
+            background: none;
+            border: none;
+            color: var(--dark);
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: all 0.3s;
+        }
+        
+        .theme-toggle:hover,
+        .language-toggle:hover {
+            color: var(--accent);
+            transform: scale(1.1);
+        }
+        
+        .language-dropdown {
+            min-width: 100px;
+        }
+        /* Hero Section */
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: var(--dark);
+            position: relative;
+            background-color: var(--light);
+            padding-top: 70px;
+            /* Adjusted for smaller navbar */
+        }
+        
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .hero-content p {
+            font-size: 1.25rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        
+        .btn-primary {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0088c6;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 160, 225, 0.3);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+            padding: 10px 28px;
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+        /* Section Styling */
+        
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        /* Tech Background for About and Partners */
+        
+        .tech-background-section {
+            position: relative;
+            overflow: hidden;
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .tech-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.15;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%2300a0e1"><circle cx="25" cy="25" r="2"/><circle cx="75" cy="25" r="2"/><circle cx="50" cy="50" r="2"/><circle cx="25" cy="75" r="2"/><circle cx="75" cy="75" r="2"/></svg>') center/cover no-repeat, linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+        
+        .section-content {
+            position: relative;
+            z-index: 1;
+        }
+        /* About Section */
+        
+        .about-img {
+            border-radius: 8px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        
+        .about-img:hover {
+            transform: scale(1.02);
+        }
+        /* Services Section */
+        
+        .service-card {
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 30px;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            text-align: center;
+            border-top: 4px solid var(--accent);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+        /* Partners Album Section */
+        
+        .partner-card {
+            background-color: var(--light);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            height: 100%;
+        }
+        
+        .partner-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .partner-logo-container {
+            padding: 30px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+        }
+        
+        .partner-logo {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+        
+        .partner-body {
+            padding: 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .partner-title {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .partner-description {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        /* Contact Section */
+        
+        .contact-form {
+            background-color: var(--light);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-control {
+            padding: 12px 15px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        
+        .form-control:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 0.25rem rgba(0, 160, 225, 0.25);
+        }
+        
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-right: 15px;
+        }
+        /* Footer */
+        
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-logo span {
+            color: var(--accent);
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--accent);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        /* Responsive Adjustments */
+        
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .section {
+                padding: 80px 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            .about-img {
+                margin-bottom: 30px;
+            }
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            .partner-logo-container {
+                height: 150px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#home">
+  <img src="ATBLogo.gif" alt="ATB Logo" style="height: 45px; margin-right: 10px;">
+</a>
+
+            <a class="navbar-brand" href="#">ATB<span></span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#partners">Partners</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- Language Dropdown -->
+                <div class="dropdown ms-2">
+                    <button class="language-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-globe"></i>
+                    </button>
+                    <ul class="dropdown-menu language-dropdown" aria-labelledby="languageDropdown">
+                        <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
+                        <li><a class="dropdown-item" href="#" data-lang="fr">Français</a></li>
+                        <li><a class="dropdown-item" href="#" data-lang="de">Deutsch</a></li>
+                    </ul>
+                </div>
+
+                <!-- Theme Toggle -->
+                <button class="theme-toggle ms-2" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+
+    <section class="hero d-flex align-items-center" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="animate__animated animate__fadeInDown">Advance Technology & Business </h1>
+                        <p class="animate__animated animate__fadeIn animate__delay-1s">Empowering Innovation in IT, Consulting, and Industrial Services</p>
+                        <div class="d-flex flex-wrap">
+                            <a href="#contact" class="btn btn-primary animate__animated animate__fadeInUp animate__delay-1s">Get in Touch</a>
+                            <a href="#services" class="btn btn-outline animate__animated animate__fadeInUp animate__delay-1s">Our Services</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block">
+                    <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Technology Illustration" class="img-fluid animate__animated animate__zoomIn animate__delay-1s">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section with Animated Background -->
+    <section class="section tech-background-section" id="about">
+        <div class="tech-background"></div>
+        <video autoplay muted loop playsinline class="bg-video">
+    <source src="background-about.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">About ATB</h2>
+                <p style="color: rgba(255,255,255,0.8)">We specialize in IT solutions for both public and private sectors, consulting and business development, and industrial services such as heavy machinery maintenance and providing spare parts and tools. Our commitment is to deliver innovative
+                    and reliable services to our clients across various industries.</p>
+            </div>
+            <div class="row align-items-center section-content">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="ABT Team" class="img-fluid about-img">
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-4" style="color: white;">Driving Digital Transformation</h3>
+                    <p class="mb-4" style="color: rgba(255,255,255,0.9)">Advance Technology and Business (ATB) is a leading provider of IT solutions, cybersecurity services, and business development consulting. With years of experience across multiple industries, we help clients leverage technology to achieve
+                        their strategic objectives.</p>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <div class="me-3" style="color: var(--accent);">
+                                    <i class="fas fa-check-circle fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5 style="color: white;">Expert Team</h5>
+                                    <p class="mb-0" style="color: rgba(255,255,255,0.8)">Certified professionals with deep industry knowledge</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <div class="me-3" style="color: var(--accent);">
+                                    <i class="fas fa-lightbulb fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5 style="color: white;">Innovative Solutions</h5>
+                                    <p class="mb-0" style="color: rgba(255,255,255,0.8)">Customized approaches for your unique challenges</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <div class="me-3" style="color: var(--accent);">
+                                    <i class="fas fa-handshake fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5 style="color: white;">Partnership Focus</h5>
+                                    <p class="mb-0" style="color: rgba(255,255,255,0.8)">Long-term relationships built on trust</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <div class="me-3" style="color: var(--accent);">
+                                    <i class="fas fa-chart-line fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5 style="color: white;">Proven Results</h5>
+                                    <p class="mb-0" style="color: rgba(255,255,255,0.8)">Measurable impact on our clients' success</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section bg-light" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Comprehensive solutions designed to meet your technology and business needs.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>IT solutions</h3>
+                        <p>End-to-end IT services for government and private enterprises including infrastructure, software, and cybersecurity.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Consulting & Business Development</h3>
+                        <p>Expert guidance to help you grow your business and streamline operations for better efficiency and profitability.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Industrial Services</h3>
+                        <p>Maintenance of heavy machines and equipment, and supplying tools and spare parts with precision and reliability.</p>
+                    </div>
+                </div>
+
+            </div>
+    </section>
+
+    <!-- Partners Section with Tech Background -->
+    <section class="section tech-background-section" id="partners">
+        <div class="tech-background"></div>
+        <div class="container section-content">
+            <div class="section-title">
+                <h2 style="color: white;">Our Partners</h2>
+                <p style="color: rgba(255,255,255,0.8)">We collaborate with industry leaders to deliver exceptional solutions to our clients.</p>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+              
+
+                <!-- TrustNoted -->
+                <div class="col">
+                    <div class="partner-card">
+                        <div class="partner-logo-container">
+                            <img src="../ATB website/img/TrustnotedLOGO.jpeg" width="100" height="100" alt="TrustNoted" class="partner-logo">
+                        </div>
+                        <div class="partner-body">
+                            <h5 class="partner-title">TrustNoted</h5>
+                            <p class="partner-description">TrustNoteD is a Switzerland-based global solutions provider specializing in digital innovations for Central Bank Digital Currency (CBDC), tokenization, and Distributed Ledger Technology (DLT)-based identity solutions. They
+                                offers services, including consulting, implementation, and operation, tailored for governments, financial institutions, and organizations</p>
+                        </div>
+                    </div>
+                </div>
+
+               <!-- orellFussli -->
+                <div class="col">
+                    <div class="partner-card">
+                        <div class="partner-logo-container">
+                            <img src="../ATB website/img/OrellFussliLOGO.jpeg" width="100" height="100" alt="TrustNoted" class="partner-logo">
+                        </div>
+                        <div class="partner-body">
+                            <h5 class="partner-title">Orell Fussli</h5>
+                            <p class="partner-description">Orell Füssli specializes in high-security printing and is a leading provider of secure banknotes and identification documents for central banks and issuing authorities worldwide. Their expertise includes designing and producing passports, visas, ID cards, and driving licenses, incorporating advanced security features. They also focus on innovative identity management solutions and digital transformation efforts, such as mobile driving licenses. The company combines centuries of printing tradition with cutting-edge technology to deliver exceptional security and quality</p>
+                        </div>
+                    </div>
+                </div>
+     
+
+
+
+                <!-- Navayo -->
+                <div class="col">
+                    <div class="partner-card">
+                        <div class="partner-logo-container">
+                            <img src="../ATB website/img/NavayoLOGO.png" width="100" height="100" alt="Navayo" class="partner-logo">
+                        </div>
+                        <div class="partner-body">
+                            <h5 class="partner-title">Navayo</h5>
+                            <p class="partner-description">Navayo Group is a cutting-edge IT research and development company specializing in hardware-based encryption solutions for secure communications.They offers a comprehensive ecosystem of security and privacy products designed
+                                for governmental and military clients across four continents</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fraunhofer Institute -->
+                <div class="col">
+                    <div class="partner-card">
+                        <div class="partner-logo-container">
+                            <img src="../ATB website/img/fraunhoferLOGO.jpeg" width="100" height="100" alt="Rubicon" class="partner-logo">
+                        </div>
+                        <div class="partner-body">
+                            <h5 class="partner-title">Fraunhofer Institute</h5>
+                            <p class="partner-description">The Fraunhofer-Gesellschaft, headquartered in Germany, is one of the world's leading organizations for applied research. Established in 1949, it focuses on conducting cutting-edge research and transferring results to industry to strengthen Germany's industrial base and benefit society as a whole.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- ChebCheb Group -->
+                <div class="col">
+                    <div class="partner-card">
+                        <div class="partner-logo-container">
+                            <img src="../ATB website/img/ChebchebLOGO.png" width="100" height="100" alt="ChebCheb Group" class="partner-logo">
+                        </div>
+                        <div class="partner-body">
+                            <h5 class="partner-title">ChebCheb Group</h5>
+                            <p class="partner-description">CHEBCHEB Group GmbH is an Austrian-based company specializing in the design, production, and distribution of specialized vehicles and comprehensive project management services. With a strong presence in both Europe and North
+                                Africa, the company bridges Austrian engineering excellence with deep regional expertise.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MDS16 -->
+                <div class="col">
+                    <div class="partner-card">
+                        <div class="partner-logo-container">
+                            <img src="../ATB website/img/MDS16LOGO.png" width="100" height="100" alt="MDS16" class="partner-logo">
+                        </div>
+                        <div class="partner-body">
+                            <h5 class="partner-title">MDS16</h5>
+                            <p class="partner-description">​MDS 16 is a Turkish defense and aerospace company headquartered in Istanbul, specializing in advanced military systems, space technologies, and cybersecurity solutions. The company offers integrated, technology-driven services
+                                tailored to the needs of land, naval, air, and space defense operations.​ .
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Baus-AT -->
+                <div class="col">
+                    <div class="partner-card">
+                        <div class="partner-logo-container">
+                            <img src="../ATB website/img/Baus-atLOGO.png" width="100" height="100" alt="Baus-AT" class="partner-logo">
+                        </div>
+                        <div class="partner-body">
+                            <h5 class="partner-title">Baus-AT</h5>
+                            <p class="partner-description">​B.A.U.S. AT. is a leading manufacturer of ambulances and specialized emergency vehicles,the company combines German management expertise with Polish craftsmanship to deliver high-quality, reliable vehicles. Through its commitment
+                                to quality and customer satisfaction, B.A.U.S. AT has established itself as a trusted partner in the emergency vehicle manufacturing industry</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hartmann -->
+                <div class="col">
+                    <div class="partner-card">
+                        <div class="partner-logo-container">
+                            <img src="../ATB website/img/HartmanLOGO.jpg" width="100" height="100" alt="Hartmann" class="partner-logo">
+                        </div>
+                        <div class="partner-body">
+                            <h5 class="partner-title">Hartmann</h5>
+                            <p class="partner-description">​Hartmann Spezialkarosserien GmbH, based in Alsfeld, Germany, specializes in designing and manufacturing custom vehicles tailored to diverse sectors. With a legacy dating back to 1909, the company combines traditional craftsmanship
+                                with modern technology to deliver high-quality, individualized solutions.​ .
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blectec -->
+                <div class="col">
+                    <div class="partner-card">
+                        <div class="partner-logo-container">
+                            <img src="../ATB website/img/BlectecLOGO.png" width="100" height="100" alt="Blectec" class="partner-logo">
+                        </div>
+                        <div class="partner-body">
+                            <h5 class="partner-title">Blectec</h5>
+                            <p class="partner-description">BlecTec GmbH, headquartered in Jessen (Elster), Saxony-Anhalt, Germany, is a privately held company specializing in metal processing, special machine construction, and custom vehicle manufacturing. With a history dating back
+                                to 1941, BlecTec has established itself as a versatile provider of comprehensive solutions in the metalworking industry.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch to discuss how we can help your business succeed.</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <h3 class="mb-4">Let's Talk About Your Project</h3>
+                    <p class="mb-5">Whether you have questions about our services or want to discuss a potential project, our team is ready to help. Reach out to us using the contact form or through one of the methods below.</p>
+
+                    <div class="d-flex mb-4">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h5>Location</h5>
+                            <p class="mb-0">P.O.BOX ; 1522 - Postal Code :112 South Al Hail / Muscat, Oman
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex mb-4">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h5>Email</h5>
+                            <p class="mb-0">office@atboman.com</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex mb-4">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h5>Phone</h5>
+                            <p class="mb-0">+968 9224 9897</p>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-lg-7">
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="footer-logo">ATB<span></span></div>
+                    <p class="mt-3">Advance Technology and Business delivers innovative solutions to help organizations thrive in the digital era.</p>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home" class="text-white text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="#about" class="text-white text-decoration-none">About</a></li>
+                        <li class="mb-2"><a href="#services" class="text-white text-decoration-none">Services</a></li>
+                        <li class="mb-2"><a href="#partners" class="text-white text-decoration-none">Partners</a></li>
+                        <li><a href="#contact" class="text-white text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">IT Solutions</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none"> Consulting and Business Development</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Indstrial services</a></li>
+
+                    </ul>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="copyright text-center pt-4">
+                        <p class="mb-0">&copy; 2025 Advance Technology and Business. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+
+                    // Update active nav link
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Here you would typically send the form data to a server
+            // For this example, we'll just log it and show an alert
+            console.log({
+                name,
+                email,
+                subject,
+                message
+            });
+
+            alert('Thank you for your message! We will get back to you soon.');
+            contactForm.reset();
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+        // Check for saved theme preference or use the system preference
+        const currentTheme = localStorage.getItem('theme') ||
+            (prefersDarkScheme.matches ? 'dark' : 'light');
+
+        // Apply the current theme
+        if (currentTheme === 'dark') {
+            document.documentElement.setAttribute('data-bs-theme', 'dark');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        } else {
+            document.documentElement.setAttribute('data-bs-theme', 'light');
+            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        }
+
+        // Toggle theme when button is clicked
+        themeToggle.addEventListener('click', function() {
+            if (document.documentElement.getAttribute('data-bs-theme') === 'dark') {
+                document.documentElement.setAttribute('data-bs-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            } else {
+                document.documentElement.setAttribute('data-bs-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            }
+        });
+
+        // Language Selection
+        document.querySelectorAll('.language-dropdown .dropdown-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                // In a real implementation, you would change the language here
+                alert(`Language changed to ${this.textContent}. In a real implementation, this would load the ${lang} translation.`);
+            });
+        });
+
+        // Animate elements when scrolling
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.service-card, .about-img, .partner-card');
+
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+
+                if (elementPosition < screenPosition) {
+                    element.classList.add('animate__animated', 'animate__fadeInUp');
+                }
+            });
+        };
+
+        // Add scroll event listener
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Trigger once on page load
+        animateOnScroll();
+    </script>
+</body>
+
+</html>
